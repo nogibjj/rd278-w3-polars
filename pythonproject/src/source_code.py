@@ -5,6 +5,7 @@ This module takes a csv and returns statistics about it
 import pandas
 import seaborn
 import matplotlib.pyplot as plt
+import polars as pl
 
 def descriptive_statistics(data):
     """
@@ -29,7 +30,9 @@ def generating_plot(data):
 if __name__ == "__main__":
 
     # Read the CSV file
-    data_sample = pandas.read_csv("pythonproject/src/data/spotify-2023.csv", encoding="ISO-8859-1")
+    data_pd = pandas.read_csv("pythonproject/src/data/spotify-2023.csv", encoding="ISO-8859-1")
+
+    data_pl=pl.read_csv("pythonproject/src/data/spotify-2023.csv", encoding="ISO-8859-1")
 
     # Print descriptive statistics
     print(descriptive_statistics(data_sample))
