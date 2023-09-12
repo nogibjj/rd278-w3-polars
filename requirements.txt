@@ -1,8 +1,6 @@
 pylint
 pytest
 black
-pandas
-seaborn
 matplotlib
 polars
 

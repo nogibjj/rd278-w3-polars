@@ -1,6 +1,6 @@
 import unittest
 import os
-import pandas
+import polars
 import sys
 #As the module src is not in the test directory I'll append it
 
@@ -19,12 +19,12 @@ class TestSourceCode(unittest.TestCase):
     """unit test class which will test source code"""
 
     def test_validity_output(self):
-        data = pandas.read_csv("pythonproject/src/data/spotify-2023.csv", encoding="ISO-8859-1")
+        data = polars.read_csv("pythonproject/src/data/median-income-by-country-2023.csv")
         result = type(source_code.descriptive_statistics(data))
-        self.assertEqual(result, pandas.core.frame.DataFrame, msg='This is not the expected output')
+        self.assertEqual(result, polars.dataframe.frame.DataFrame, msg='This is not the expected output')
 
     def test_csv_validity(self):
-        valid_csv_path = "pythonproject/src/data/spotify-2023.csv"  # Replace with the path to a valid CSV file
+        valid_csv_path = "pythonproject/src/data/median-income-by-country-2023.csv"  # Replace with the path to a valid CSV file
         invalid_csv_path = "pythonproject/src/data/Test.docx"  # Replace with the path to an invalid CSV file
 
         self.assertTrue(is_csv_file(valid_csv_path), "Valid CSV file check failed.")

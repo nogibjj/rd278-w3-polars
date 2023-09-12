@@ -46,9 +46,11 @@ if __name__ == "__main__":
 
     data_pl=pl.read_csv("pythonproject/src/data/median-income-by-country-2023.csv")
 
-    descriptive_statistics(data_pl)
+    print(type(data_pl))
 
-    generating_plot(data_pl,x_variable="gdpPerCapitaPPP",
-                    y_variable="meanIncome",
-                    size="pop2023",
-                    title="GDP per Capita vs Avg income (size proportional Population)")
+    print(type(descriptive_statistics(data_pl)))
+
+    #generating_plot(data_pl,x_variable="gdpPerCapitaPPP",
+    #                y_variable="meanIncome",
+    #                size="pop2023",
+    #                title="GDP per Capita vs Avg income (size proportional Population)")
