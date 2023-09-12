@@ -1,9 +1,6 @@
 """
 This module takes a csv and returns statistics about it
 """
-
-import pandas
-import seaborn
 import matplotlib.pyplot as plt
 import polars as pl
 
@@ -20,7 +17,7 @@ def descriptive_statistics(data):
     """
     return data.describe()
 
-def generating_plot(data,x_variable,y_variable,size=None,title):
+def generating_plot(data,x_variable,y_variable,title,size=None):
     '''
     Parameters:
         data: Polar DataFrame
@@ -40,14 +37,14 @@ def generating_plot(data,x_variable,y_variable,size=None,title):
     plt.scatter(x, y, s=area, alpha=0.5)
     plt.xlabel(x_variable)
     plt.ylabel(y_variable)
-    plt.title("")
+    plt.title(title)
     plt.show()
     plt.savefig(title+'.png', dpi=300, bbox_inches='tight')
 
 
 if __name__ == "__main__":
 
-    data_pl=pl.read_csv("pythonproject/src/data/spotify-2023.csv", encoding="ISO-8859-1")
+    data_pl=pl.read_csv("pythonproject/src/data/median-income-by-country-2023.csv")
 
     descriptive_statistics(data_pl)
 
