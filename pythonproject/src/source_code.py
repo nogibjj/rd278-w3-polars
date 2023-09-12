@@ -12,29 +12,46 @@ def descriptive_statistics(data):
     Calculate descriptive statistics for a DataFrame.
 
     Parameters:
-    data (pd.DataFrame): The input DataFrame containing numeric data.
+    data (pl.DataFrame): The input Polars DataFrame,
+    which must contain numeric data.
 
     Returns:
-    pd.DataFrame: A DataFrame containing descriptive statistics.
+    pl.DataFrame: A DataFrame containing descriptive statistics.
     """
     return data.describe()
 
-def generating_plot(data):
+def generating_plot(data,x_variable,y_variable,size=None,title):
     '''
-    This function generates a scatter plot from X and Y
+    Parameters:
+        data: Polar DataFrame
+        x_variable: String of the variable in axis X from data
+        y_variable: String of the variable in axis Y from data
+        size: String if a variable is required to 
+        title: String for the plot title
     '''
-    seaborn.pairplot(data)
-    plt.savefig('plot.png', dpi=300, bbox_inches='tight')
+    
+    x=data[x_variable]
+    y=data[y_variable]
+    if size is None:
+        area=1
+    else:
+        area = data[size]*10/data[size].mean()
+    #Labeling
+    plt.scatter(x, y, s=area, alpha=0.5)
+    plt.xlabel(x_variable)
+    plt.ylabel(y_variable)
+    plt.title("")
+    plt.show()
+    plt.savefig(title+'.png', dpi=300, bbox_inches='tight')
 
 
 if __name__ == "__main__":
 
-    # Read the CSV file
-    data_pd = pandas.read_csv("pythonproject/src/data/spotify-2023.csv", encoding="ISO-8859-1")
-
     data_pl=pl.read_csv("pythonproject/src/data/spotify-2023.csv", encoding="ISO-8859-1")
 
-    # Print descriptive statistics
-    print(descriptive_statistics(data_sample))
+    descriptive_statistics(data_pl)
 
-    generating_plot(data_sample[['energy_%','instrumentalness_%']])
+    generating_plot(data_pl,x_variable="gdpPerCapitaPPP",
+                    y_variable="meanIncome",
+                    size="pop2023",
+                    title="GDP per Capita vs Avg income (size proportional Population)")
