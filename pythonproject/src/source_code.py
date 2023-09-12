@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     print(type(descriptive_statistics(data_pl)))
 
-    #generating_plot(data_pl,x_variable="gdpPerCapitaPPP",
-    #                y_variable="meanIncome",
-    #                size="pop2023",
-    #                title="GDP per Capita vs Avg income (size proportional Population)")
+    generating_plot(data_pl,x_variable="gdpPerCapitaPPP",
+                    y_variable="meanIncome",
+                    size="pop2023",
+                    title="GDP per Capita vs Avg income (size proportional Population)")
