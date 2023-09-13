@@ -14,7 +14,7 @@ REQUIREMENTS := requirements.txt
 # Install project dependencies
 
 env:
-	$(PYTHON) -m venv $(VENV); source $(VENV)/bin/activate
+	$(PYTHON) -m venv $(VENV); . $(VENV)/bin/activate
 
 install:
 	$(VENV)/bin/pip install --upgrade pip -r  $(REQUIREMENTS)
