@@ -2,17 +2,19 @@
 
 # Variables
 PYTHON := python3
-VENV := venv
+VENV := ~\.venv
 SRC_DIR := pythonproject/src
 TEST_DIR := pythonproject/tests
 REQUIREMENTS := requirements.txt
 
 # Default target
-all: venv install test format lint
+all: venv source install test format lint
 
 # Create a virtual environment
 venv:
 	$(PYTHON) -m venv $(VENV)
+source:
+	$(VENV)/bin/activate
 
 # Install project dependencies
 install:
