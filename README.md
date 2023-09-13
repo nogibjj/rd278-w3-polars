@@ -1,4 +1,4 @@
-[![Test workflow for Python template](https://github.com/bugarin10/rd278-w2-pandas/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/bugarin10/rd278-w2-pandas/actions/workflows/pythonapp.yml)
+[![Test workflow for Python template](https://github.com/nogibjj/rd278-w3-polars/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/nogibjj/rd278-w3-polars/actions/workflows/pythonapp.yml)
 
 # Descriptive Statistics 
 
@@ -7,15 +7,15 @@ The template created in week one was updatedfor this assignment, particularly pa
 
 ## Functions implemented
 
-Data is loaded using **panda.read_csv**, and the function **dataframe.describe()** is used in module **source_code.py** to return the mean, min, percentiles and max.
+Data is loaded using **polars.read_csv**, and the function **dataframe.describe()** is used in module **source_code.py** to return the mean, min, percentiles and max.
 
 ## Test:
 Besides linting and formating, the code had two test:
 1. Checks if the file path is a csv file
-2. Checks if the output is a DataFrame
+2. Checks if the output is a polar DataFrame
 
 # A Scatter plot
 
 Just for the sake of ilustration, a plot was added to see the relationship between the instrumentalness and energy percentages of every song.
 
-![Scatter plot](https://github.com/bugarin10/rd278-w2-pandas/blob/main/plot.png)
+![Scatter Plot](https://github.com/nogibjj/rd278-w3-polars/blob/main/GDP%20per%20Capita%20vs%20Avg%20income%20(size%20proportional%20Population).png)
