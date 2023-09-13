@@ -18,7 +18,7 @@ venv:
 	$(PYTHON) -m venv $(VENV)
 
 # Install project dependencies
-install: venv
+install:
 	$(VENV)/bin/pip install --upgrade pip -r  $(REQUIREMENTS)
 
 # Run unit tests
