@@ -16,6 +16,6 @@ Besides linting and formating, the code had two test:
 
 # A Scatter plot
 
-Just for the sake of ilustration, a plot was added to see the relationship between the instrumentalness and energy percentages of every song.
+Just for the sake of ilustration, a plot was added to see the relationship between the GDP per Capita and the Average income, the data is for Countries and the size of each circle is proportional to the population of each country.
 
 ![Scatter Plot](https://github.com/nogibjj/rd278-w3-polars/blob/main/GDP%20per%20Capita%20vs%20Avg%20income%20(size%20proportional%20Population).png)
