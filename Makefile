@@ -2,21 +2,20 @@
 
 # Variables
 PYTHON := python3
-VENV := ~\.venv
+VENV := env
 SRC_DIR := pythonproject/src
 TEST_DIR := pythonproject/tests
 REQUIREMENTS := requirements.txt
 
 # Default target
-all: venv source install test format lint
 
-# Create a virtual environment
-venv:
-	$(PYTHON) -m venv $(VENV)
-source:
-	$(VENV)/bin/activate
+.PHONY: all env install test format lint clean
 
 # Install project dependencies
+
+env:
+	$(PYTHON) -m venv $(VENV); source $(VENV)/bin/activate
+
 install:
 	$(VENV)/bin/pip install --upgrade pip -r  $(REQUIREMENTS)
 
@@ -35,3 +34,6 @@ lint:
 # Clean up generated files and virtual environment
 clean:
 	rm -rf $(VENV) __pycache__ .pytest_cache
+
+all: 
+	env install test format lint
